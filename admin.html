@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel — Portfolio TIA</title>
+    <meta name="robots" content="noindex, nofollow" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+</head>
+
+<body class="admin-body">
+
+    <header class="admin-header">
+        <div class="container admin-header__inner">
+            <a href="index.html" class="navbar__brand">TI<span>A</span></a>
+            <a href="index.html" class="btn btn-ghost btn-small">← Kembali ke Portfolio</a>
+        </div>
+    </header>
+
+    <main class="container admin-main">
+
+        <div class="admin-banner" data-mode-banner>
+            <!-- Diisi otomatis oleh admin.js sesuai mode aktif (lokal / terhubung Sheets) -->
+        </div>
+
+        <section class="admin-section" data-pin-section hidden>
+            <div class="section-head" style="margin-bottom: 1.5rem;">
+                <p class="section-kicker">Autentikasi</p>
+                <h2 class="section-title">PIN Admin</h2>
+                <p class="section-sub">
+                    Karena data sudah tersambung ke Google Sheets, setiap Save/Update/Delete
+                    butuh PIN yang sudah kamu atur di Apps Script (variabel <code>ADMIN_PIN</code>).
+                    PIN ini hanya disimpan sementara di browser (sesi ini saja), tidak dikirim ke mana pun selain ke
+                    Apps Script kamu sendiri.
+                </p>
+            </div>
+
+            <form class="admin-form" data-pin-form style="max-width: 420px;">
+                <div class="form-field">
+                    <label for="admin-pin">PIN</label>
+                    <input type="password" id="admin-pin" name="pin" autocomplete="off"
+                        placeholder="Masukkan PIN Apps Script kamu" />
+                </div>
+                <div class="admin-form__actions">
+                    <button type="submit" class="btn btn-primary btn-small">Simpan PIN untuk sesi ini</button>
+                    <span class="form-status" data-pin-status></span>
+                </div>
+            </form>
+        </section>
+
+        <section class="admin-section">
+            <div class="section-head" style="margin-bottom: 1.5rem;">
+                <p class="section-kicker">Admin Panel</p>
+                <h1 class="section-title" id="form-title">Tambah Project Baru</h1>
+                <p class="section-sub">
+                    Isi form di bawah untuk menambahkan project. Semua field bertanda
+                    <strong>*</strong> wajib diisi.
+                </p>
+            </div>
+
+            <form class="admin-form" data-admin-form novalidate>
+                <input type="hidden" name="id" value="" />
+
+                <div class="form-field">
+                    <label for="p-name">Project Name *</label>
+                    <input type="text" id="p-name" name="name" autocomplete="off" />
+                    <p class="form-error" data-error-for="name"></p>
+                </div>
+
+                <div class="admin-form__row">
+                    <div class="form-field">
+                        <label for="p-category">Category *</label>
+                        <input type="text" id="p-category" name="category" placeholder="mis. Web Development" />
+                        <p class="form-error" data-error-for="category"></p>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="p-year">Year *</label>
+                        <input type="number" id="p-year" name="year" placeholder="2025" min="2000" max="2100" />
+                        <p class="form-error" data-error-for="year"></p>
+                    </div>
+                </div>
+
+                <div class="form-field">
+                    <label for="p-description">Description *</label>
+                    <textarea id="p-description" name="description" rows="3"
+                        placeholder="Ceritakan project ini secara singkat"></textarea>
+                    <p class="form-error" data-error-for="description"></p>
+                </div>
+
+                <div class="form-field">
+                    <label for="p-tech">Technology</label>
+                    <input type="text" id="p-tech" name="tech"
+                        placeholder="HTML, CSS, JavaScript (pisahkan dengan koma)" />
+                    <p class="form-error" data-error-for="tech"></p>
+                </div>
+
+                <div class="admin-form__row">
+                    <div class="form-field">
+                        <label for="p-status">Status *</label>
+                        <select id="p-status" name="status">
+                            <option value="Prototype">Prototype</option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="p-thumbnail">Thumbnail URL</label>
+                        <input type="url" id="p-thumbnail" name="thumbnail" placeholder="https://..." />
+                        <p class="form-error" data-error-for="thumbnail"></p>
+                    </div>
+                </div>
+
+                <div class="admin-form__row">
+                    <div class="form-field">
+                        <label for="p-demo">Live Demo URL</label>
+                        <input type="url" id="p-demo" name="demoUrl" placeholder="https://..." />
+                        <p class="form-error" data-error-for="demoUrl"></p>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="p-github">GitHub URL</label>
+                        <input type="url" id="p-github" name="githubUrl" placeholder="https://github.com/..." />
+                        <p class="form-error" data-error-for="githubUrl"></p>
+                    </div>
+                </div>
+
+                <div class="admin-form__actions">
+                    <button type="submit" class="btn btn-primary" data-submit-btn>Save Project</button>
+                    <button type="button" class="btn btn-ghost" data-cancel-edit hidden>Batal Edit</button>
+                </div>
+                <p class="form-status" data-form-status></p>
+            </form>
+        </section>
+
+        <section class="admin-section">
+            <div class="section-head" style="margin-bottom: 1.5rem;">
+                <p class="section-kicker">Daftar Project</p>
+                <h2 class="section-title">Kelola project yang sudah ada</h2>
+            </div>
+
+            <div class="admin-list" data-admin-list>
+                <!-- Diisi otomatis oleh admin.js -->
+            </div>
+        </section>
+
+    </main>
+
+    <script src="js/config.js"></script>
+    <script src="js/projects-data.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+
+</html>

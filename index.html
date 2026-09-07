@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tatia Alza (TIA) — Mahasiswa Teknik Informatika & Web Developer</title>
+  <meta name="description"
+    content="Portfolio Tatia Alza (TIA), mahasiswa Teknik Informatika yang senang membangun website, belajar teknologi baru, dan memecahkan masalah lewat pemrograman." />
+  <meta name="theme-color" content="#1b1815" />
+
+  <!-- Open Graph dasar -->
+  <meta property="og:title" content="Tatia Alza (TIA) — Web Developer" />
+  <meta property="og:description"
+    content="Portfolio mahasiswa Teknik Informatika: project, skill, dan proses belajar." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <a href="#main-content" class="visually-hidden">Lewati ke konten utama</a>
+
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <a href="#home" class="navbar__brand">TI<span>A</span></a>
+
+      <nav class="navbar__links" aria-label="Navigasi utama">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#hobbies">Hobbies</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="navbar__toggle" data-nav-toggle aria-label="Buka menu navigasi" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <nav class="navbar__mobile" data-nav-mobile aria-label="Navigasi mobile">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#hobbies">Hobbies</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ============================= HOME / HERO ============================= -->
+    <section class="hero" id="home">
+      <div class="container hero__grid">
+        <div class="reveal is-visible">
+          <p class="hero__eyebrow">Hello, saya</p>
+          <h1 class="hero__name">Tatia Alza</h1>
+          <p class="hero__role">Mahasiswa Teknik Informatika &amp; Web Developer</p>
+          <p class="hero__desc">
+            Saya senang membangun website, mempelajari teknologi baru, dan mencari
+            jalan keluar dari masalah lewat pemrograman — sambil terus belajar
+            dari setiap project yang saya kerjakan.
+          </p>
+
+          <div class="hero__cta">
+            <a href="#projects" class="btn btn-primary">Lihat Project</a>
+            <a href="#about" class="btn btn-ghost">Tentang Saya</a>
+          </div>
+
+          <div class="hero__social" aria-label="Tautan sosial">
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub Tatia">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <path
+                  d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="reveal is-visible">
+          <div class="hero__photo-wrap">
+            <div class="hero__photo-frame" aria-hidden="true"></div>
+            <div class="hero__photo">
+              <img src="assets/images/profile.tatia.jpeg" alt="Foto Tatia Alza" />
+            </div>
+            <div class="hero__status">
+              <span class="hero__status-dot" aria-hidden="true"></span>
+              Sedang belajar hal baru
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= ABOUT ============================= -->
+    <section id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-kicker">Profile</p>
+          <h2 class="section-title">Tentang saya</h2>
+        </div>
+
+        <div class="about__grid">
+          <div class="about__text reveal">
+            <p>
+              Saya Tatia, biasa dipanggil TIA — mahasiswa Teknik Informatika yang
+              tertarik pada web development, UI/UX, dan proses membangun sesuatu
+              dari ide menjadi produk yang bisa dipakai orang lain.
+            </p>
+            <p>
+              Bagi saya, programming bukan cuma soal membuat website. Prosesnya
+              mirip dengan cara saya melihat masalah dalam hidup: ketika kode
+              error atau sebuah cara tidak berhasil, saya belajar untuk tidak
+              langsung panik — memahami dulu penyebabnya, berpikir tenang, lalu
+              mencoba jalan lain.
+            </p>
+            <p>
+              <em>Setiap masalah pasti memiliki jalan keluar</em> — dan itu yang
+              terus saya pegang setiap kali mengerjakan project, baik untuk tugas
+              kuliah maupun project pribadi.
+            </p>
+
+            <blockquote class="about__quote">
+              “Hidup harus menjadi orang yang bermanfaat bagi orang lain.”
+            </blockquote>
+
+            <p>
+              Karena itu, saya ingin kemampuan teknologi yang saya pelajari tidak
+              hanya berguna untuk diri sendiri, tapi juga bisa dipakai untuk
+              membuat sesuatu yang benar-benar bermanfaat bagi orang lain.
+            </p>
+          </div>
+
+          <div class="about__stats reveal">
+            <div class="stat-card">
+              <p class="stat-card__label">Mahasiswa</p>
+              <p class="stat-card__desc">Teknik Informatika</p>
+            </div>
+            <div class="stat-card">
+              <p class="stat-card__label">Web Development</p>
+              <p class="stat-card__desc">Area yang sedang saya dalami</p>
+            </div>
+            <div class="stat-card">
+              <p class="stat-card__label">Problem Solving</p>
+              <p class="stat-card__desc">Cara saya bekerja</p>
+            </div>
+            <div class="stat-card">
+              <p class="stat-card__label">Terus belajar</p>
+              <p class="stat-card__desc">Lewat project nyata</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= EDUCATION ============================= -->
+    <section id="education">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-kicker">Education</p>
+          <h2 class="section-title">Riwayat pendidikan</h2>
+          <p class="section-sub">Perjalanan pendidikan saya sampai sekarang.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline__item reveal">
+            <span class="timeline__dot" aria-hidden="true"></span>
+            <div class="timeline__card">
+              <p class="timeline__period">Sekolah Dasar</p>
+              <h3 class="timeline__title">SDN 1 Caleu</h3>
+              <p class="timeline__place">Pendidikan dasar</p>
+            </div>
+          </div>
+
+          <div class="timeline__item reveal">
+            <span class="timeline__dot" aria-hidden="true"></span>
+            <div class="timeline__card">
+              <p class="timeline__period">Sekolah Menengah Pertama</p>
+              <h3 class="timeline__title">MTsN 8 Pidie</h3>
+              <p class="timeline__place">Pendidikan menengah pertama</p>
+            </div>
+          </div>
+
+          <div class="timeline__item reveal">
+            <span class="timeline__dot" aria-hidden="true"></span>
+            <div class="timeline__card">
+              <p class="timeline__period">Sekolah Menengah Atas</p>
+              <h3 class="timeline__title">SMAN 1 Indrajaya</h3>
+              <p class="timeline__place">Pendidikan menengah atas</p>
+            </div>
+          </div>
+
+          <div class="timeline__item reveal">
+            <span class="timeline__dot" aria-hidden="true"></span>
+            <div class="timeline__card">
+              <p class="timeline__period">Perguruan Tinggi — sedang berlangsung</p>
+              <h3 class="timeline__title">Universitas Jabal Ghafur (Unigha)</h3>
+              <p class="timeline__place">Fakultas Teknik, Program Studi Teknik Informatika</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= SKILLS ============================= -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-kicker">Skills</p>
+          <h2 class="section-title">Kemampuan yang sedang saya pelajari</h2>
+          <p class="section-sub">
+            Dikelompokkan berdasarkan area, bukan diukur dengan persentase —
+            karena saya masih terus belajar di masing-masing area ini.
+          </p>
+        </div>
+
+        <div class="skills__grid">
+          <div class="skill-group reveal">
+            <h3 class="skill-group__title">Frontend</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">HTML</span>
+              <span class="skill-tag">CSS</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">Bootstrap</span>
+              <span class="skill-tag">Tailwind CSS</span>
+              <span class="skill-tag is-learning">React / Vite</span>
+            </div>
+          </div>
+
+          <div class="skill-group reveal">
+            <h3 class="skill-group__title">Backend</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">PHP</span>
+              <span class="skill-tag is-learning">Laravel</span>
+            </div>
+          </div>
+
+          <div class="skill-group reveal">
+            <h3 class="skill-group__title">Database</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">MariaDB</span>
+              <span class="skill-tag">phpMyAdmin</span>
+            </div>
+          </div>
+
+          <div class="skill-group reveal">
+            <h3 class="skill-group__title">Tools &amp; Lainnya</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Git / GitHub</span>
+              <span class="skill-tag">VS Code</span>
+              <span class="skill-tag is-learning">Unity</span>
+              <span class="skill-tag is-learning">Chart.js</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-legend">
+          <span class="dot" aria-hidden="true"></span>
+          Bertanda border = sedang dipelajari
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= HOBBIES ============================= -->
+    <section id="hobbies">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-kicker">Hobbies</p>
+          <h2 class="section-title">Hal-hal yang saya senangi</h2>
+        </div>
+
+        <div class="hobbies__grid">
+          <div class="hobby-card reveal">
+            <svg class="hobby-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <polyline points="8 9 4 12 8 15" />
+              <polyline points="16 9 20 12 16 15" />
+              <line x1="14" y1="6" x2="10" y2="18" />
+            </svg>
+            <h3 class="hobby-card__title">Programming</h3>
+            <p class="hobby-card__desc">Menulis kode dan mencoba hal baru lewat project kecil.</p>
+          </div>
+
+          <div class="hobby-card reveal">
+            <svg class="hobby-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M12 3a9 9 0 0 1 0 18M3 12h18" />
+            </svg>
+            <h3 class="hobby-card__title">Eksplorasi Teknologi</h3>
+            <p class="hobby-card__desc">Mencoba tools, framework, atau cara baru yang belum familiar.</p>
+          </div>
+
+          <div class="hobby-card reveal">
+            <svg class="hobby-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="4" width="18" height="14" rx="2" />
+              <path d="M3 9h18M8 4v5" />
+            </svg>
+            <h3 class="hobby-card__title">Desain &amp; UI/UX</h3>
+            <p class="hobby-card__desc">Menyusun tampilan website supaya enak dilihat dan dipakai.</p>
+          </div>
+
+          <div class="hobby-card reveal">
+            <svg class="hobby-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+            </svg>
+            <h3 class="hobby-card__title">Belajar Hal Baru</h3>
+            <p class="hobby-card__desc">Membaca dokumentasi, tutorial, atau materi kuliah di luar jam kelas.</p>
+          </div>
+
+          <div class="hobby-card reveal">
+            <svg class="hobby-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2 2 7l10 5 10-5-10-5z" />
+              <path d="M2 17l10 5 10-5M2 12l10 5 10-5" />
+            </svg>
+            <h3 class="hobby-card__title">Membuat Project Kreatif</h3>
+            <p class="hobby-card__desc">Mengubah ide sederhana menjadi sesuatu yang benar-benar jadi.</p>
+          </div>
+
+          <div class="hobby-card reveal">
+            <svg class="hobby-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M4 19.5V6a2 2 0 0 1 2-2h13a1 1 0 0 1 1 1v14" />
+              <path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20" />
+            </svg>
+            <h3 class="hobby-card__title">Mengajar / Berbagi Ilmu</h3>
+            <p class="hobby-card__desc">Menjelaskan ulang apa yang sudah dipelajari ke teman kuliah.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= PROJECTS ============================= -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-kicker">Projects</p>
+          <h2 class="section-title">Project yang sudah saya kerjakan</h2>
+          <p class="section-sub">
+            Daftar ini akan terus bertambah seiring project baru yang saya kerjakan,
+            baik untuk kuliah maupun di luar kuliah.
+          </p>
+        </div>
+
+        <div class="projects__grid" data-projects-grid>
+          <!-- Diisi otomatis oleh js/projects.js -->
+        </div>
+
+        <p class="projects__more" data-projects-note>Memuat data project…</p>
+      </div>
+    </section>
+
+    <!-- ============================= CONTACT ============================= -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-kicker">Contact</p>
+          <h2 class="section-title">Mari terhubung</h2>
+          <p class="section-sub">
+            Terbuka untuk diskusi project, kolaborasi, atau sekadar bertukar pikiran soal teknologi.
+          </p>
+        </div>
+
+        <div class="contact__grid">
+          <div class="contact__list reveal">
+            <div class="contact__item">
+              <svg class="contact__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+                <path d="m3 7 9 6 9-6" />
+              </svg>
+              <div>
+                <p class="contact__item-label">Email</p>
+                <p class="contact__item-value">tatialza@gmail.com</p>
+              </div>
+            </div>
+            <div class="contact__item">
+              <svg class="contact__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <path
+                  d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21" />
+              </svg>
+              <div>
+                <p class="contact__item-label">GitHub</p>
+                <p class="contact__item-value">github.com/tatiaalza</p>
+              </div>
+            </div>
+            <div class="contact__item">
+              <svg class="contact__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <rect x="3" y="3" width="18" height="18" rx="3" />
+                <line x1="8" y1="11" x2="8" y2="16" />
+                <line x1="8" y1="8" x2="8" y2="8" />
+                <path d="M12 16v-3a2 2 0 0 1 4 0v3" />
+              </svg>
+              <div>
+                <p class="contact__item-label">WhatsApp</p>
+                <p class="contact__item-value">083875463729</p>
+              </div>
+            </div>
+            <div class="contact__item">
+              <svg class="contact__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="1" />
+              </svg>
+              <div>
+                <p class="contact__item-label">Instagram</p>
+                <p class="contact__item-value">@lzatia_</p>
+              </div>
+            </div>
+            <div class="contact__item">
+              <svg class="contact__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <path d="M5 4h14v16H5z" />
+                <path d="M8 8h8M8 12h8M8 16h5" />
+              </svg>
+              <div>
+                <p class="contact__item-label">CapCut</p>
+                <p class="contact__item-value">Stranger</p>
+              </div>
+            </div>
+            <div class="contact__item">
+              <svg class="contact__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z" />
+                <path d="M4 5.5v15M8 7h8M8 11h8" />
+              </svg>
+              <div>
+                <p class="contact__item-label">Canva</p>
+                <p class="contact__item-value">cellrafa734@gmail.com</p>
+              </div>
+            </div>
+          </div>
+
+          <form class="contact-form reveal" data-contact-form novalidate>
+            <div class="form-field">
+              <label for="name">Nama</label>
+              <input type="text" id="name" name="name" autocomplete="name" />
+              <p class="form-error" data-error-for="name"></p>
+            </div>
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autocomplete="email" />
+              <p class="form-error" data-error-for="email"></p>
+            </div>
+            <div class="form-field">
+              <label for="message">Pesan</label>
+              <textarea id="message" name="message" rows="4"></textarea>
+              <p class="form-error" data-error-for="message"></p>
+            </div>
+            <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+            <p class="form-status" data-form-status></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> Tatia Alza. Dibangun dari nol, dengan HTML, CSS, dan JavaScript.</p>
+      <p>Dibuat sebagai portfolio yang terus berkembang.</p>
+    </div>
+  </footer>
+
+  <button class="back-to-top" data-back-to-top aria-label="Kembali ke atas">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="12" y1="19" x2="12" y2="5" />
+      <polyline points="5 12 12 5 19 12" />
+    </svg>
+  </button>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script src="js/config.js"></script>
+  <script src="js/projects-data.js"></script>
+  <script src="js/projects.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
