@@ -1,17 +1,28 @@
 /**
  * projects-data.js
  * -----------------------------------------------------------------------
- * Data project DEFAULT / FALLBACK.
+ * DEFAULT_PROJECTS — data project fallback/lokal yang dipakai js/projects.js
+ * ketika Google Sheets (CONFIG.APPS_SCRIPT_URL) belum terhubung atau gagal
+ * diakses. Lihat README.md bagian "Kenapa fallback project penting".
  *
- * Ini dipakai ketika:
- *  1. Google Apps Script belum dihubungkan (CONFIG.APPS_SCRIPT_URL kosong), atau
- *  2. Fetch ke Google Sheets gagal (offline, error, timeout).
+ * CATATAN PERBAIKAN:
+ * File ini sebelumnya HILANG dari repository walaupun sudah dipanggil di
+ * index.html (<script src="js/projects-data.js">) dan disebut di README.
+ * Akibatnya window.DEFAULT_PROJECTS tidak pernah terdefinisi, sehingga
+ * section Projects di halaman utama macet permanen di teks
+ * "Memuat data project…". File ini dibuat ulang supaya section Projects
+ * berfungsi kembali.
  *
- * Dengan begini, portfolio TETAP menampilkan minimal project ini
- * kapan pun, tanpa bergantung pada koneksi ke Google Sheets.
+ * Data di bawah HANYA berisi apa yang sudah pasti diketahui (nama project
+ * dan file thumbnail yang sudah ada di repo). Field lain (description,
+ * tech, year, demoUrl, githubUrl) sengaja dikosongkan / diberi teks
+ * "coming soon" alih-alih dikarang, supaya tidak ada informasi palsu.
  *
- * Struktur field HARUS sama dengan data yang dikirim dari Google Sheets
- * lewat Apps Script (lihat js/projects.js -> normalizeProject).
+ * CARA MENGISI:
+ * Edit langsung array di bawah ini — ganti nilai description, tech,
+ * year, status, demoUrl, githubUrl sesuai data project asli kamu. Untuk
+ * menambah project baru, cukup tambahkan object baru dengan struktur yang
+ * sama di dalam array DEFAULT_PROJECTS.
  * -----------------------------------------------------------------------
  */
 
@@ -19,14 +30,40 @@ const DEFAULT_PROJECTS = [
     {
         id: "eka-home-massage",
         name: "Eka Home Massage",
-        category: "Web Development",
-        description:
-            "Website untuk membantu memperkenalkan dan mempromosikan layanan pijat panggilan Eka Home Massage secara online, mencakup informasi layanan, harga, dan cara memesan.",
-        tech: ["HTML", "CSS", "JavaScript"],
-        year: 2025,
-        status: "Prototype",
+        category: "Project", // TODO: ganti dengan kategori asli (mis. "Website Bisnis")
+        description: "Project details coming soon.", // TODO: isi deskripsi asli project ini
+        tech: [], // TODO: isi teknologi yang dipakai, mis. ["HTML", "CSS", "JavaScript"]
+        year: "", // TODO: isi tahun pengerjaan, mis. "2025"
+        status: "Prototype", // TODO: ganti jika statusnya berbeda, mis. "Selesai"
         thumbnail: "assets/images/projects/eka-home-massage.jpg",
-        demoUrl: "",
+        demoUrl: "https://cellrafa734-crypto.github.io/eka-home-massage/",
+        githubUrl: "https://github.com/cellrafa734-crypto/eka-home-massage",
+    },
+
+    {
+        id: "hadirin-digital",
+        name: "Hadirin Digital",
+        category: "Project",
+        description: "Website Hadirin Digital.",
+        tech: [],
+        year: "2026",
+        status: "Selesai",
+        thumbnail: "assets/images/projects/hadirin-digital.png",
+        demoUrl: "https://cellrafa734-crypto.github.io/hadirin-digital/",
         githubUrl: "",
     },
+
+    // Tambahkan project baru di sini dengan format yang sama:
+    // {
+    //   id: "id-unik-project",
+    //   name: "Nama Project",
+    //   category: "Kategori",
+    //   description: "Deskripsi singkat project.",
+    //   tech: ["Teknologi 1", "Teknologi 2"],
+    //   year: "2026",
+    //   status: "Selesai",
+    //   thumbnail: "assets/images/projects/nama-file.jpg",
+    //   demoUrl: "",
+    //   githubUrl: "",
+    // },
 ];

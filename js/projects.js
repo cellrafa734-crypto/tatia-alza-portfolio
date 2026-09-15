@@ -59,6 +59,7 @@ async function loadProjects(grid) {
             try {
                 const fetched = await fetchProjectsFromSheet(CONFIG.APPS_SCRIPT_URL, CONFIG.FETCH_TIMEOUT_MS);
                 projects = fetched.map(normalizeProject);
+                appendFallbackProjects(projects);
                 sourceIsSheet = true;
                 // Catatan: kalau Google Sheets memang mengembalikan daftar KOSONG
                 // (misal semua project sudah dihapus lewat Admin Panel), itu keadaan
@@ -156,6 +157,15 @@ function normalizeProject(raw) {
         demoUrl: String(raw.demoUrl ?? ""),
         githubUrl: String(raw.githubUrl ?? ""),
     };
+}
+
+function appendFallbackProjects(projects) {
+    const existingIds = new Set(projects.map((project) => project.id));
+    DEFAULT_PROJECTS.forEach((project) => {
+        if (!existingIds.has(project.id)) {
+            projects.push(normalizeProject(project));
+        }
+    });
 }
 
 function cryptoRandomId() {
