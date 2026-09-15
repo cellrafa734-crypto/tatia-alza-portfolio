@@ -11,12 +11,62 @@
  */
 
 document.addEventListener("DOMContentLoaded", () => {
+  initWelcomeIntro();
   initMobileNav();
   initActiveNavLink();
   initScrollReveal();
   initBackToTop();
   initContactForm();
 });
+
+function initWelcomeIntro() {
+  const intro = document.querySelector("[data-welcome-intro]");
+  if (!intro) return;
+
+  let hasVisited = false;
+  try {
+    hasVisited = window.localStorage.getItem("tia-welcome-seen") === "true";
+  } catch (err) {
+    console.warn("[welcome] localStorage tidak tersedia, intro akan tampil lagi pada kunjungan berikutnya.");
+  }
+
+  if (hasVisited) {
+    intro.remove();
+    return;
+  }
+
+  document.body.classList.add("intro-is-open");
+
+  const closeIntro = (withVoice) => {
+    if (withVoice && "speechSynthesis" in window) {
+      window.speechSynthesis.cancel();
+      const welcomeVoice = new SpeechSynthesisUtterance(
+        "Halo, selamat datang di portfolio Tatia Alza. Saya senang mengubah ide menjadi pengalaman digital. Selamat menjelajah."
+      );
+      welcomeVoice.lang = "id-ID";
+      welcomeVoice.rate = 0.9;
+      welcomeVoice.pitch = 0.95;
+      welcomeVoice.volume = 0.8;
+      window.speechSynthesis.speak(welcomeVoice);
+    }
+
+    try {
+      window.localStorage.setItem("tia-welcome-seen", "true");
+    } catch (err) {
+      // Intro tetap bisa ditutup meski penyimpanan lokal tidak tersedia.
+    }
+
+    document.body.classList.remove("intro-is-open");
+    intro.classList.add("is-closing");
+    window.setTimeout(() => intro.remove(), 750);
+  };
+
+  intro.querySelector("[data-welcome-enter]")?.addEventListener("click", () => closeIntro(true));
+  intro.querySelector("[data-welcome-skip]")?.addEventListener("click", () => closeIntro(false));
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeIntro(false);
+  }, { once: true });
+}
 
 /* ---------------------------------------------------------------------
  * Mobile hamburger menu
