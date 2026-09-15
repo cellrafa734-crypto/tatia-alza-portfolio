@@ -53,6 +53,20 @@ const DEFAULT_PROJECTS = [
         githubUrl: "",
     },
 
+    {
+        id: "sanggar-seni-leguna",
+        name: "Sanggar Seni Leguna",
+        category: "Web Development",
+        description:
+            "Website profil dan booking untuk Sanggar Seni Leguna yang memperkenalkan program kelas, dokumentasi kegiatan, dan layanan pentas seni.",
+        tech: ["HTML", "CSS", "JavaScript"],
+        year: "2026",
+        status: "Selesai",
+        thumbnail: "https://ameliasyifaul55315-beep.github.io/sanggar-seni-leguna/adat-rumoh-leguna.jpg",
+        demoUrl: "https://ameliasyifaul55315-beep.github.io/sanggar-seni-leguna/",
+        githubUrl: "https://github.com/ameliasyifaul55315-beep/sanggar-seni-leguna",
+    },
+
     // Tambahkan project baru di sini dengan format yang sama:
     // {
     //   id: "id-unik-project",
