@@ -79,5 +79,8 @@ const DEFAULT_PROJECTS = [
     //   thumbnail: "assets/images/projects/nama-file.jpg",
     //   demoUrl: "",
     //   githubUrl: "",
+    //   role: "Peran kamu di project",
+    //   challenge: "Tantangan utama yang diselesaikan",
+    //   result: "Hasil atau dampak project",
     // },
 ];

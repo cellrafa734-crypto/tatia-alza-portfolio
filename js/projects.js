@@ -20,6 +20,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     const grid = document.querySelector("[data-projects-grid]");
 
+    initProjectModal();
+
     if (!grid) {
         console.error(
             "[projects] Container grid '[data-projects-grid]' TIDAK ditemukan di index.html. " +
@@ -156,6 +158,9 @@ function normalizeProject(raw) {
         thumbnail: String(raw.thumbnail ?? ""),
         demoUrl: String(raw.demoUrl ?? ""),
         githubUrl: String(raw.githubUrl ?? ""),
+        role: String(raw.role ?? ""),
+        challenge: String(raw.challenge ?? ""),
+        result: String(raw.result ?? ""),
     };
 }
 
@@ -320,6 +325,16 @@ function buildProjectCard(project) {
         linksWrap.appendChild(disabled);
     }
 
+    const detailButton = document.createElement("button");
+    detailButton.type = "button";
+    detailButton.className = "project-card__details";
+    detailButton.textContent = "Lihat detail";
+    detailButton.addEventListener("click", (event) => {
+        event.stopPropagation();
+        openProjectModal(project);
+    });
+    linksWrap.appendChild(detailButton);
+
     card.appendChild(imageBlock);
     card.appendChild(body);
     return card;
@@ -330,4 +345,89 @@ function buildImagePlaceholder() {
     placeholder.className = "project-card__placeholder";
     placeholder.textContent = "Gambar project belum tersedia";
     return placeholder;
+}
+
+function initProjectModal() {
+    const modal = document.querySelector("[data-project-modal]");
+    if (!modal) return;
+
+    modal.querySelectorAll("[data-project-modal-close]").forEach((closeButton) => {
+        closeButton.addEventListener("click", closeProjectModal);
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeProjectModal();
+    });
+}
+
+function openProjectModal(project) {
+    const modal = document.querySelector("[data-project-modal]");
+    if (!modal) return;
+
+    const image = modal.querySelector("[data-project-modal-image]");
+    image.innerHTML = "";
+    if (project.thumbnail) {
+        const imageElement = document.createElement("img");
+        imageElement.src = project.thumbnail;
+        imageElement.alt = `Preview project ${project.name}`;
+        imageElement.onerror = () => image.replaceChildren(buildImagePlaceholder());
+        image.appendChild(imageElement);
+    } else {
+        image.appendChild(buildImagePlaceholder());
+    }
+
+    modal.querySelector("[data-project-modal-category]").textContent = project.category;
+    modal.querySelector("[data-project-modal-title]").textContent = project.name;
+    modal.querySelector("[data-project-modal-description]").textContent = project.description;
+
+    const facts = modal.querySelector("[data-project-modal-facts]");
+    facts.innerHTML = "";
+    addProjectFact(facts, "Tahun", project.year);
+    addProjectFact(facts, "Teknologi", project.tech.join(" / "));
+    addProjectFact(facts, "Peran", project.role);
+    addProjectFact(facts, "Tantangan", project.challenge);
+    addProjectFact(facts, "Hasil", project.result);
+
+    const links = modal.querySelector("[data-project-modal-links]");
+    links.innerHTML = "";
+    addProjectLink(links, project.demoUrl, "Lihat project");
+    addProjectLink(links, project.githubUrl, "Buka GitHub");
+
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("project-modal-open");
+    modal.querySelector(".project-modal__close").focus();
+}
+
+function closeProjectModal() {
+    const modal = document.querySelector("[data-project-modal]");
+    if (!modal) return;
+
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("project-modal-open");
+}
+
+function addProjectFact(container, label, value) {
+    if (!value) return;
+
+    const fact = document.createElement("div");
+    fact.className = "project-modal__fact";
+    const factLabel = document.createElement("span");
+    factLabel.textContent = label;
+    const factValue = document.createElement("strong");
+    factValue.textContent = value;
+    fact.append(factLabel, factValue);
+    container.appendChild(fact);
+}
+
+function addProjectLink(container, url, label) {
+    if (!url) return;
+
+    const link = document.createElement("a");
+    link.href = url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = label;
+    container.appendChild(link);
 }

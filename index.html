@@ -21,7 +21,7 @@
     href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
 
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css?v=case-study" />
 </head>
 
 <body>
@@ -507,6 +507,22 @@
     </div>
   </div>
 
+  <div class="project-modal" data-project-modal aria-hidden="true">
+    <div class="project-modal__backdrop" data-project-modal-close></div>
+    <article class="project-modal__box" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+      <button class="project-modal__close" type="button" data-project-modal-close
+        aria-label="Tutup detail project">&times;</button>
+      <div class="project-modal__image" data-project-modal-image></div>
+      <div class="project-modal__content">
+        <p class="project-modal__category" data-project-modal-category></p>
+        <h2 id="project-modal-title" class="project-modal__title" data-project-modal-title></h2>
+        <p class="project-modal__description" data-project-modal-description></p>
+        <div class="project-modal__facts" data-project-modal-facts></div>
+        <div class="project-modal__links" data-project-modal-links></div>
+      </div>
+    </article>
+  </div>
+
   <footer class="footer">
     <div class="container footer__inner">
       <p>© <span id="year"></span> Tatia Alza. Dibangun dari nol, dengan HTML, CSS, dan JavaScript.</p>
@@ -524,7 +540,7 @@
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
   <script src="js/config.js"></script>
   <script src="js/project-data.js"></script>
-  <script src="js/projects.js"></script>
+  <script src="js/projects.js?v=case-study"></script>
   <script src="js/script.js"></script>
   <script src="js/effects.js"></script>
 </body>
