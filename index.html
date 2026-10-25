@@ -7,7 +7,7 @@
   <title>Tatia Alza (TIA) — Mahasiswa Teknik Informatika & Web Developer</title>
   <meta name="description"
     content="Portfolio Tatia Alza (TIA), mahasiswa Teknik Informatika yang senang membangun website, belajar teknologi baru, dan memecahkan masalah lewat pemrograman." />
-  <meta name="theme-color" content="#080808" />
+  <meta name="theme-color" content="#fffaf5" />
 
   <!-- Open Graph dasar -->
   <meta property="og:title" content="Tatia Alza (TIA) — Web Developer" />
@@ -22,6 +22,7 @@
     rel="stylesheet" />
 
   <link rel="stylesheet" href="css/style.css?v=case-study" />
+  <link rel="stylesheet" href="css/portfolio-refresh.css" />
 </head>
 
 <body>
@@ -56,6 +57,7 @@
         <a href="#education">Education</a>
         <a href="#skills">Skills</a>
         <a href="#hobbies">Hobbies</a>
+          <a href="#activities">Aktivitas</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -71,6 +73,7 @@
       <a href="#education">Education</a>
       <a href="#skills">Skills</a>
       <a href="#hobbies">Hobbies</a>
+          <a href="#activities">Aktivitas</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -369,6 +372,18 @@
       </div>
     </section>
 
+        <!-- ============================= ACTIVITIES ============================= -->
+    <section id="activities">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-kicker">Activity Journal</p>
+          <h2 class="section-title">Aktivitas &amp; Pengalaman</h2>
+          <p class="section-sub">Ruang terpisah untuk dokumentasi kegiatan, proses belajar, dan pengalaman di luar project.</p>
+        </div>
+        <div class="activities__grid" data-activities-grid aria-live="polite"></div>
+        <p class="activities__note">Kamu bisa menambahkan foto dan keterangan melalui panel admin. Data yang disimpan di browser perlu diekspor ke GitHub agar tampil untuk semua pengunjung.</p>
+      </div>
+    </section>
     <!-- ============================= PROJECTS ============================= -->
     <section id="projects">
       <div class="container">
@@ -543,6 +558,8 @@
   <script src="js/projects.js?v=case-study"></script>
   <script src="js/script.js"></script>
   <script src="js/effects.js"></script>
+  <script src="js/activities-data.js"></script>
+  <script src="js/activities.js"></script>
 </body>
 
 </html>

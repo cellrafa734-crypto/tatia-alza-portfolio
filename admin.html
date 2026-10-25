@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/admin.css" />
+    <link rel="stylesheet" href="css/portfolio-refresh.css" />
 </head>
 
 <body class="admin-body">
@@ -154,11 +155,67 @@
             </div>
         </section>
 
+            <section class="admin-section" id="admin-activities">
+          <div class="section-head" style="margin-bottom: 1.25rem;">
+            <p class="section-kicker">Activity Journal</p>
+            <h2 class="section-title">Kelola Aktivitas &amp; Pengalaman</h2>
+            <p class="section-sub">Bagian ini terpisah dari Project. Tambahkan dokumentasi kegiatan, foto, dan keterangan singkat.</p>
+          </div>
+          <div class="admin-banner is-visible mode-local" style="display:block;">
+            Aktivitas disimpan pada browser/perangkat ini. Untuk menerbitkan perubahan ke semua pengunjung, klik â€œUnduh data aktivitas untuk GitHubâ€ setelah selesai, lalu unggah file <code>activities-data.js</code> ke folder <code>js</code> pada repository. Ini tidak mengubah daftar Project.
+          </div>
+          <form class="admin-form" data-activity-form>
+            <input type="hidden" name="id" value="" />
+            <div class="form-field">
+              <label for="activity-title">Nama aktivitas *</label>
+              <input id="activity-title" name="title" type="text" autocomplete="off" required placeholder="Contoh: Kegiatan praktikum IoT" />
+            </div>
+            <div class="admin-form__row">
+              <div class="form-field">
+                <label for="activity-category">Kategori</label>
+                <input id="activity-category" name="category" type="text" placeholder="Kampus, Belajar, Mengajarâ€¦" />
+              </div>
+              <div class="form-field">
+                <label for="activity-year">Tahun</label>
+                <input id="activity-year" name="year" type="text" inputmode="numeric" placeholder="2026" />
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="activity-caption">Keterangan di bawah foto *</label>
+              <textarea id="activity-caption" name="caption" rows="4" required placeholder="Ceritakan singkat kegiatan, peranmu, atau hal yang kamu pelajari."></textarea>
+            </div>
+            <div class="mobile-image-picker">
+              <label for="activity-image">Unggah foto dari HP / komputer</label>
+              <input id="activity-image" data-activity-image type="file" accept="image/jpeg,image/png,image/webp,image/*" />
+              <p class="mobile-image-picker__hint">Pilih foto kegiatan asli. Foto dikompresi otomatis agar lebih ringan.</p>
+              <p class="mobile-image-picker__status" data-activity-image-status aria-live="polite"></p>
+              <div class="mobile-image-picker__preview" data-activity-image-preview><img alt="Pratinjau foto kegiatan" /></div>
+              <button class="btn btn-ghost btn-small" type="button" data-activity-clear-image>Kosongkan foto</button>
+            </div>
+            <div class="admin-form__actions">
+              <button class="btn btn-primary" type="submit" data-activity-submit>Simpan Aktivitas</button>
+              <button class="btn btn-ghost" type="button" data-activity-reset>Reset Form</button>
+            </div>
+            <p class="form-status" data-activity-status aria-live="polite"></p>
+          </form>
+          <div class="admin-activities__toolbar" style="margin-top: 1.5rem;">
+            <button class="btn btn-primary btn-small" type="button" data-export-activities>Unduh data aktivitas untuk GitHub</button>
+            <button class="btn btn-ghost btn-small" type="button" data-reset-activities>Reset data aktivitas lokal</button>
+          </div>
+          <div class="section-head" style="margin: 1.5rem 0 1rem;">
+            <h3 class="section-title" style="font-size:1.5rem;">Aktivitas yang tersimpan</h3>
+          </div>
+          <div class="admin-activities__list" data-admin-activities-list></div>
+        </section>
     </main>
 
     <script src="js/config.js"></script>
     <script src="js/project-data.js"></script>
     <script src="js/admin.js"></script>
+  <script src="js/image-utils.js"></script>
+  <script src="js/mobile-image-upload.js"></script>
+  <script src="js/activities-data.js"></script>
+  <script src="js/activities-admin.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,256 @@
+/* TIA Portfolio Refresh — additive layer, original css/style.css is preserved. */
+:root {
+  --color-bg: #fffaf5;
+  --color-bg-alt: #f8f0e8;
+  --color-surface: #fffdf9;
+  --color-surface-hover: #fff4eb;
+  --color-border: rgba(100, 45, 54, .14);
+  --color-border-strong: rgba(100, 45, 54, .26);
+  --color-text: #35252b;
+  --color-text-muted: #76656a;
+  --color-text-faint: #96858a;
+  --color-accent: #78283b;
+  --color-accent-hover: #963c51;
+  --color-accent-soft: #bd7d83;
+  --color-focus: #c99d72;
+  --ease: cubic-bezier(.22, 1, .36, 1);
+}
+
+html { scroll-padding-top: 5.5rem; }
+body,
+.admin-body {
+  background:
+    radial-gradient(ellipse at 12% 4%, rgba(224, 187, 164, .16), transparent 32rem),
+    var(--color-bg);
+  color: var(--color-text);
+}
+body::selection { background: #ead0d2; color: #40232c; }
+
+/* Soft, light welcome screen instead of the old near-black intro. */
+.welcome-intro {
+  background:
+    radial-gradient(ellipse at 78% 23%, rgba(225, 188, 170, .34), transparent 26rem),
+    radial-gradient(ellipse at 17% 82%, rgba(193, 128, 135, .16), transparent 24rem),
+    #fffaf4;
+  color: var(--color-text);
+}
+.welcome-intro__grain { opacity: .035; }
+.welcome-intro::before { border-color: rgba(120, 40, 59, .24); border-radius: 1.5rem; }
+.welcome-intro::after { border-color: rgba(120, 40, 59, .18); background: rgba(255, 255, 255, .12); }
+.welcome-intro__eyebrow,
+.welcome-intro__audio-note { color: #93616b; }
+.welcome-intro__title { color: #542033; text-shadow: none; }
+.welcome-intro__message { color: #756168; }
+.welcome-intro__enter { background: var(--color-accent); color: #fffaf5; box-shadow: 0 12px 30px rgba(120, 40, 59, .18); }
+.welcome-intro__enter:hover { background: var(--color-accent-hover); }
+.welcome-intro__skip { color: #775d65; }
+
+.navbar {
+  background: rgba(255, 250, 245, .9);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 8px 26px rgba(91, 48, 57, .035);
+  backdrop-filter: blur(18px);
+}
+.navbar__brand { color: #562437; }
+.navbar__brand span { color: #b77d82; }
+.navbar__links a,
+.navbar__mobile a { color: #604c52; }
+.navbar__links a:hover,
+.navbar__links a.is-active,
+.navbar__mobile a:hover { color: var(--color-accent); }
+.navbar__mobile { background: rgba(255, 250, 245, .98); border-bottom: 1px solid var(--color-border); }
+.navbar__toggle { border-color: var(--color-border-strong); background: var(--color-surface); }
+.navbar__toggle span { background: var(--color-accent); }
+
+.hero { background: transparent; }
+.hero__name { color: #4b2031; letter-spacing: -.045em; }
+.hero__role { color: #865261; }
+.hero__desc { color: #6f6065; max-width: 42rem; }
+.hero__photo-wrap { isolation: isolate; }
+.hero__photo-frame { background: linear-gradient(135deg, #f1dfd3, #ead1d0 62%, #e7d9bf); border-radius: 48% 42% 22px 22px; }
+.hero__photo { border: 8px solid rgba(255, 253, 249, .86); box-shadow: 0 22px 60px rgba(100, 47, 60, .14); }
+.hero__status { background: rgba(255, 253, 249, .94); border: 1px solid var(--color-border); color: #704954; box-shadow: 0 12px 32px rgba(100, 47, 60, .1); }
+.hero__status-dot { background: #7c9a7b; }
+
+section { border-color: var(--color-border); }
+.section-title { color: #492432; letter-spacing: -.025em; }
+.section-kicker { color: #ad737b; }
+.section-sub { color: #7c6a6f; }
+.about__text p,
+.timeline__place,
+.hobby-card__desc { color: #76666a; }
+.about__quote { border-left-color: #b77d82; background: linear-gradient(90deg, rgba(235, 215, 208, .4), transparent); color: #653747; }
+.stat-card,
+.timeline__card,
+.skill-group,
+.hobby-card,
+.project-card,
+.contact__item,
+.contact-form,
+.activity-card {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+  box-shadow: 0 12px 36px rgba(80, 42, 51, .045);
+}
+.stat-card__label,
+.timeline__title,
+.skill-group__title,
+.hobby-card__title,
+.project-card__title { color: #482632; }
+.timeline__line { background: #e7cfd0; }
+.timeline__dot { background: #fffaf5; border-color: #aa707c; }
+.skill-tag { background: #f8eee7; border-color: #e5d4ca; color: #6e535b; }
+.skill-tag.is-learning { color: #854352; border-color: #ce9ca2; background: #fcf2f0; }
+.hobby-card:hover,
+.project-card:hover,
+.activity-card:hover,
+.contact__item:hover { border-color: #d2a2a5; box-shadow: 0 18px 44px rgba(80, 42, 51, .09); }
+
+.btn-primary,
+.welcome-intro__enter { background: linear-gradient(135deg, #702237, #963e53); color: #fffaf7; border-color: transparent; }
+.btn-primary:hover { background: linear-gradient(135deg, #5c1d30, #853247); }
+.btn-ghost { border-color: #d5b3b4; color: #763246; background: rgba(255, 253, 249, .68); }
+.btn-ghost:hover { background: #f5e6e1; border-color: #bd858c; color: #5f2235; }
+.hero__social a { color: #7a3447; border-color: #e1c9c8; background: #fffdf9; }
+.hero__social a:hover { background: #f4e4e0; }
+
+.project-card__image { background: #f3e6dc; }
+.project-card__status { background: rgba(255, 250, 245, .92); color: #6a3546; border-color: #e5cfca; }
+.project-card__category { color: #a56570; }
+.project-card__desc { color: #76656a; }
+.project-card__tech span { background: #f7eee7; color: #735760; border-color: #e6d5cf; }
+.project-card__links a { color: #64283b; border-color: #c28c94; }
+.project-card__details { color: #8b4053; }
+.project-card__details:hover { color: #572235; }
+.project-card__placeholder { background: linear-gradient(135deg, #f7eee6, #ead7d3); color: #856c72; }
+.projects__state { border-color: #dbc3c2; color: #78676b; }
+.project-modal__backdrop { background: rgba(53, 31, 39, .48); backdrop-filter: blur(9px); }
+.project-modal__box { background: #fffaf5; border-color: #ead8d1; box-shadow: 0 24px 80px rgba(62, 29, 40, .24); }
+.project-modal__image { background: #f5e9e1; }
+.project-modal__close { background: rgba(120, 40, 59, .92); color: #fffaf5; border-color: rgba(255,255,255,.38); }
+.project-modal__category { color: #a66b76; }
+.project-modal__title { color: #4a2332; }
+.project-modal__description { color: #75636a; }
+.project-modal__fact span { color: #927d83; }
+.project-modal__fact strong { color: #49313a; }
+.project-modal__links a { color: #6d293c; border-color: #dec6c3; }
+.project-modal__links a:hover { background: #f5e5e1; color: #592133; border-color: #bb828a; }
+
+.contact__item-icon { color: #a96f7a; }
+.contact__item-label { color: #987f85; }
+.contact__item-value { color: #533641; overflow-wrap: anywhere; }
+.form-field label { color: #715c63; }
+.form-field input,
+.form-field textarea,
+.form-field select { background: #fffdf9; color: #3f3036; border-color: #ddc9c5; }
+.form-field input:focus,
+.form-field textarea:focus,
+.form-field select:focus { border-color: #ad737d; outline: 3px solid rgba(173, 115, 125, .12); }
+.form-status.success { color: #47714e; }
+.form-status.error { color: #a02c48; }
+.footer { border-top: 1px solid var(--color-border); }
+.footer__inner { color: #907b81; }
+.back-to-top { background: #78283b; color: #fffaf5; box-shadow: 0 8px 24px rgba(120, 40, 59, .22); }
+
+/* New Activities section stays separate from Projects. */
+.activities__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.15rem; }
+.activity-card { min-width: 0; overflow: hidden; border: 1px solid var(--color-border); border-radius: 18px; transition: transform .28s var(--ease), box-shadow .28s var(--ease), border-color .28s var(--ease); }
+.activity-card:hover { transform: translateY(-4px); }
+.activity-card__media { aspect-ratio: 16 / 10; position: relative; overflow: hidden; background: linear-gradient(135deg, #f3e6db, #e8d1cf 58%, #e6dfca); }
+.activity-card__media img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.activity-card__placeholder { display: grid; place-items: center; height: 100%; min-height: 165px; position: relative; overflow: hidden; color: #7c3d50; }
+.activity-card__placeholder::before, .activity-card__placeholder::after { content: ""; position: absolute; border: 1px solid rgba(124,61,80,.17); border-radius: 50%; width: 170px; height: 170px; right: -35px; top: -70px; }
+.activity-card__placeholder::after { width: 110px; height: 110px; right: auto; top: auto; left: -24px; bottom: -55px; background: rgba(255,250,245,.35); }
+.activity-card__placeholder svg { width: 48px; height: 48px; z-index: 1; opacity: .88; }
+.activity-card__body { padding: 1.15rem 1.2rem 1.25rem; }
+.activity-card__eyebrow { font-size: .72rem; text-transform: uppercase; letter-spacing: .13em; color: #a36b76; font-weight: 700; }
+.activity-card__title { font: 600 1.2rem/1.25 var(--font-display); color: #4b2534; margin: .35rem 0 .55rem; }
+.activity-card__caption { font-size: .91rem; color: #75656a; line-height: 1.7; overflow-wrap: anywhere; }
+.activity-card__year { color: #9a858a; font-size: .78rem; margin-top: .9rem; }
+.activities__note { margin-top: 1.1rem; color: #947e83; font-size: .82rem; }
+
+/* Admin panel: comfortable touch targets and image picker on phones. */
+.admin-body { min-height: 100vh; }
+.admin-header { background: rgba(255,250,245,.93); border-color: var(--color-border); }
+.admin-main { padding-bottom: 5rem; }
+.admin-section { border-color: var(--color-border); }
+.admin-banner { background: #fbf1e9; color: #765d64; border-color: #e5d0ca; }
+.admin-banner.mode-connected { border-color: #a2c2a2; color: #426c4c; background: #f2f8ef; }
+.admin-banner.mode-local { color: #805c39; background: #fff6e9; border-color: #ebd3ad; }
+.admin-item { background: #fffdf9; border-color: var(--color-border); box-shadow: 0 8px 24px rgba(80,42,51,.04); }
+.admin-item__title { color: #4b2534; }
+.admin-item__meta { color: #8a757b; }
+.admin-item__badge { background: #f8eee7; color: #763d4b; border-color: #e2ccca; }
+.admin-item__actions button { color: #6c3545; border-color: #dcc4c3; background: #fffaf5; min-height: 42px; }
+.admin-item__actions button:hover { color: #5a2436; background: #f7e9e4; border-color: #c48b94; }
+.admin-form__actions { gap: .7rem; }
+.admin-form__actions .btn { min-height: 44px; }
+.admin-activities__toolbar { display: flex; flex-wrap: wrap; gap: .65rem; margin-bottom: 1rem; }
+.admin-activities__list { display: grid; gap: .85rem; }
+.admin-activity-item { display: grid; grid-template-columns: 104px minmax(0,1fr); gap: 1rem; padding: .85rem; border-radius: 15px; border: 1px solid var(--color-border); background: #fffdf9; }
+.admin-activity-item img, .admin-activity-item__placeholder { width: 104px; height: 90px; border-radius: 10px; object-fit: cover; background: #f0e1d9; }
+.admin-activity-item__placeholder { display: grid; place-items: center; color: #884454; }
+.admin-activity-item__title { color: #4b2534; font-weight: 700; }
+.admin-activity-item__meta { color: #8b767b; font-size: .8rem; margin-top: .2rem; }
+.admin-activity-item__caption { color: #6f5d63; font-size: .88rem; margin-top: .35rem; overflow-wrap: anywhere; }
+.admin-activity-item__actions { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .65rem; }
+.admin-activity-item__actions button { min-height: 38px; padding: .45rem .8rem; border-radius: 9px; border: 1px solid #ddc5c4; background: #fffaf5; color: #70283c; }
+.mobile-image-picker { margin-top: .8rem; padding: 1rem; border: 1px dashed #d8babc; border-radius: 14px; background: #fff8f2; }
+.mobile-image-picker label { display: block; color: #6e414e; font-weight: 700; font-size: .9rem; margin-bottom: .45rem; }
+.mobile-image-picker input[type="file"] { display: block; max-width: 100%; width: 100%; font: inherit; color: #68565c; padding: .6rem 0; }
+.mobile-image-picker__hint { margin: .35rem 0 0; color: #947d82; font-size: .78rem; line-height: 1.55; }
+.mobile-image-picker__status { color: #547452; font-size: .82rem; margin-top: .4rem; overflow-wrap: anywhere; }
+.mobile-image-picker__preview { display: none; margin-top: .7rem; max-width: 240px; }
+.mobile-image-picker__preview.is-visible { display: block; }
+.mobile-image-picker__preview img { display: block; width: 100%; max-height: 180px; object-fit: cover; border-radius: 10px; border: 1px solid #e4cfca; }
+.admin-section code { overflow-wrap: anywhere; }
+
+@media (max-width: 900px) {
+  .activities__grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media (max-width: 640px) {
+  :root { --space-3: 1.15rem; --space-4: 1.7rem; --space-5: 2.5rem; --space-6: 3.5rem; }
+  body { font-size: 15px; }
+  .container { width: min(100% - 2rem, var(--content-max)); }
+  .navbar__inner { min-height: 66px; }
+  .hero { padding-block: 3.25rem 2.8rem; }
+  .hero__grid { gap: 2rem; }
+  .hero__name { font-size: clamp(2.5rem, 12vw, 4rem); line-height: 1.03; }
+  .hero__role { font-size: 1rem; }
+  .hero__photo-wrap { width: min(100%, 340px); margin-inline: auto; }
+  .hero__photo { border-width: 5px; }
+  section { padding-block: 3rem; }
+  .section-title { font-size: clamp(1.8rem, 8vw, 2.55rem); line-height: 1.12; }
+  .about__grid, .contact__grid { grid-template-columns: 1fr; }
+  .about__stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .skills__grid { grid-template-columns: 1fr; }
+  .hobbies__grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .hobby-card { padding: 1.05rem .95rem; }
+  .projects__grid { grid-template-columns: 1fr; gap: 1rem; }
+  .project-card__body { padding: 1.1rem; }
+  .activities__grid { grid-template-columns: 1fr; gap: 1rem; }
+  .activity-card__body { padding: 1rem; }
+  .contact-form { padding: 1rem; }
+  .project-modal__box { width: 100%; }
+  .admin-header__inner { gap: .75rem; flex-wrap: wrap; }
+  .admin-header__inner .btn { font-size: .78rem; padding: .55rem .75rem; }
+  .admin-main { padding-block: 1.5rem 3rem; }
+  .admin-form { max-width: 100%; }
+  .admin-form__row { grid-template-columns: 1fr; }
+  .admin-form__actions { align-items: stretch; flex-direction: column; }
+  .admin-form__actions .btn, .admin-activities__toolbar .btn { width: 100%; justify-content: center; }
+  .admin-item { padding: 1rem; }
+  .admin-item__actions button { flex: 1; }
+  .admin-activity-item { grid-template-columns: 78px minmax(0,1fr); gap: .7rem; padding: .7rem; }
+  .admin-activity-item img, .admin-activity-item__placeholder { width: 78px; height: 78px; }
+  .admin-activity-item__actions button { flex: 1; }
+  .mobile-image-picker { padding: .85rem; }
+  .footer__inner { padding-block: 1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .activity-card, .activity-card:hover { transform: none; transition: none; }
+}
+
+/* Jangan biarkan Data URL thumbnail yang panjang merusak panel admin. */
+.admin-item details [data-field="thumbnail"] { display: inline-block; max-width: 100%; max-height: 4.5rem; overflow: hidden; overflow-wrap: anywhere; word-break: break-all; vertical-align: top; }
